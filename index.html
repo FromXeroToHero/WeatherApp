@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="icon" href="src/img/favicon.png" />
+
+    <script type="module" defer src="src/js/script.js"></script>
+    <title>WeatherApp</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header__title">
+        <h1 class="header__title--main">Horizon Weather</h1>
+        <p class="header__title--secondary">Get ready for your day with us!</p>
+      </div>
+      <div class="container__search">
+        <form action="#" class="search">
+          <input class="search-input" type="search" placeholder="Search" />
+          <button class="btn-gps">gps</button>
+        </form>
+        <ul class="autocomplete"></ul>
+        <div class="loader-container hidden">
+          <div class="loader"></div>
+        </div>
+      </div>
+    </header>
+    <section class="section-weather hidden" id="section-weather">
+      <div class="weather">
+        <!-- <div class="weather__current">
+          <h2 class="heading--2 heading--grid">
+            Current weather in Balti, Moldova
+          </h2>
+          <div class="weather__data">
+            <div class="weather__data-title">Temperature</div>
+            <div class="weather__data-info">27 C</div>
+          </div>
+          <div class="weather__data">
+            <div class="weather__data-title">Precipitations</div>
+            <div class="weather__data-info">2 mm</div>
+          </div>
+          <div class="weather__data">
+            <div class="weather__data-title">Humidity</div>
+            <div class="weather__data-info">37%</div>
+          </div>
+          <div class="weather__data">
+            <div class="weather__data-title">Wind speed</div>
+            <div class="weather__data-info">
+              13km/h <span class="winddirection">&uArr;</span>
+            </div>
+          </div> 
+        </div>-->
+        <!-- <h2 class="heading--2">Weather by Days</h2>
+
+        <div class="weather__days">
+          <div class="weather__days-info weather__days--active">
+            <div class="date">05.08</div>
+            <div class="temp--max">35.3</div>
+            <div class="temp--min">22.4</div>
+            <img
+              src="img/weather/cloudy-day-1.svg"
+              alt=""
+              class="weather-code"
+            />
+          </div>
+          <div class="weather__days-info">
+            <div class="date">05.08</div>
+            <div class="temp--max">35.3</div>
+            <div class="temp--min">22.4</div>
+            <img
+              src="img/weather/cloudy-day-1.svg"
+              alt=""
+              class="weather-code"
+            />
+          </div>
+          <div class="weather__days-info">
+            <div class="date">05.08</div>
+            <div class="temp--max">35.3</div>
+            <div class="temp--min">22.4</div>
+            <img
+              src="img/weather/cloudy-day-1.svg"
+              alt=""
+              class="weather-code"
+            />
+          </div>
+          <div class="weather__days-info">
+            <div class="date">05.08</div>
+            <div class="temp--max">35.3</div>
+            <div class="temp--min">22.4</div>
+            <img
+              src="img/weather/cloudy-day-1.svg"
+              alt=""
+              class="weather-code"
+            />
+          </div>
+          <div class="weather__days-info">
+            <div class="date">05.08</div>
+            <div class="temp--max">35.3</div>
+            <div class="temp--min">22.4</div>
+            <img
+              src="img/weather/cloudy-day-1.svg"
+              alt=""
+              class="weather-code"
+            />
+          </div>
+          <div class="weather__days-info">
+            <div class="date">05.08</div>
+            <div class="temp--max">35.3</div>
+            <div class="temp--min">22.4</div>
+            <img
+              src="img/weather/cloudy-day-1.svg"
+              alt=""
+              class="weather-code"
+            />
+          </div>
+          <div class="weather__days-info">
+            <div class="date">05.08</div>
+            <div class="temp--max">35.3</div>
+            <div class="temp--min">22.4</div>
+            <img
+              src="img/weather/cloudy-day-1.svg"
+              alt=""
+              class="weather-code"
+            />
+          </div>
+        </div> -->
+      </div>
+      <div class="weather__detailed">
+        <!-- <div class="weather__data-title weather__detailed-time">
+          Balti, Moldova, 7 Aug, 17:00
+        </div>
+
+        <div class="weather__data bordered">
+          <div class="weather__data-title">Temperature</div>
+          <div class="weather__data-info">27 C</div>
+        </div>
+
+        <div class="weather__data bordered">
+          <div class="weather__data-title">Status</div>
+          <div class="weather__data-info">Sunny</div>
+        </div>
+
+        <div class="weather__data bordered">
+          <div class="weather__data-title">Precipitation probability</div>
+          <div class="weather__data-info">20 %</div>
+        </div>
+
+        <div class="weather__data bordered">
+          <div class="weather__data-title">Precipitations</div>
+          <div class="weather__data-info">0 mm</div>
+        </div>
+
+        <div class="weather__data bordered">
+          <div class="weather__data-title">Humidity</div>
+          <div class="weather__data-info">13 %</div>
+        </div>
+
+        <div class="weather__data bordered">
+          <div class="weather__data-title">Visibility</div>
+          <div class="weather__data-info">24 km</div>
+        </div>
+
+        <div class="weather__data bordered">
+          <div class="weather__data-title">Wind speed</div>
+          <div class="weather__data-info" style="display: flex; gap: 1rem">
+            15 km/h
+            <span
+              style="
+                color: white;
+                fontweight: 700;
+                font-size: 2rem;
+                transform: rotate(240deg);
+              "
+              >&uarr;</span
+            >
+          </div>
+        </div>
+
+        <div class="weather__data bordered">
+          <div class="weather__data-title">Surface pressure</div>
+          <div class="weather__data-info">1023 hPa</div>
+        </div>
+
+        <div class="weather__data bordered">
+          <div class="weather__data-title">Sunrise</div>
+          <div class="weather__data-info">05:45</div>
+        </div>
+
+        <div class="weather__data bordered">
+          <div class="weather__data-title">Sunset</div>
+          <div class="weather__data-info">20:39</div>
+        </div> -->
+      </div>
+      <div class="chart">
+        <canvas
+          id="myChart"
+          style="width: 100%; max-width: 70vw; height: 600px"
+        ></canvas>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+      </div>
+    </section>
+  </body>
+</html>
+<!-- 
+<h2 class="heading--2">Current weather in Balti, Moldova</h2>
+          <div class="weather__">
+            <div class="weather__section-title">Time</div>
+            <div class="weather__section-data">16:43</div>
+          </div>
+          <div class="weather__section">
+            <div class="weather__section-title">Location</div>
+            <div class="weather__section-data">Balti, Moldova</div>
+          </div>
+          <div class="weather__section">
+            <div class="weather__section-title">Temperature</div>
+            <div class="weather__section-data">20 C</div>
+          </div>
+          <div class="weather__section">
+            <div class="weather__section-title">Wind Speed</div>
+            <div class="weather__section-data">13 km/h</div>
+          </div> -->
